@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    /* background: #E8765D; */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    color: #6B4423;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #E8765D;
+}
+
+/* Header Slideshow */
+.slideshow-container {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide1 {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><radialGradient id="grad1" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23F5DEB3;stop-opacity:1" /><stop offset="100%" style="stop-color:%23D2691E;stop-opacity:1" /></radialGradient></defs><rect fill="%238B6F47" width="1200" height="500"/><g><circle cx="200" cy="150" r="60" fill="url(%23grad1)"/><circle cx="205" cy="145" r="8" fill="%233E2723"/><circle cx="190" cy="155" r="6" fill="%233E2723"/><circle cx="210" cy="160" r="7" fill="%233E2723"/></g><g><circle cx="450" cy="280" r="70" fill="url(%23grad1)"/><circle cx="455" cy="275" r="9" fill="%233E2723"/><circle cx="440" cy="285" r="7" fill="%233E2723"/><circle cx="460" cy="295" r="8" fill="%233E2723"/><circle cx="445" cy="270" r="6" fill="%233E2723"/></g><g><circle cx="750" cy="180" r="65" fill="url(%23grad1)"/><circle cx="755" cy="175" r="8" fill="%233E2723"/><circle cx="740" cy="185" r="7" fill="%233E2723"/><circle cx="760" cy="190" r="7" fill="%233E2723"/></g><g><circle cx="1000" cy="320" r="75" fill="url(%23grad1)"/><circle cx="1005" cy="315" r="9" fill="%233E2723"/><circle cx="990" cy="325" r="8" fill="%233E2723"/><circle cx="1010" cy="330" r="7" fill="%233E2723"/><circle cx="995" cy="310" r="6" fill="%233E2723"/></g></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.slide2 {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><radialGradient id="grad2" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23DEB887;stop-opacity:1" /><stop offset="100%" style="stop-color:%23A0522D;stop-opacity:1" /></radialGradient></defs><rect fill="%237D5A3C" width="1200" height="500"/><g><circle cx="150" cy="200" r="55" fill="url(%23grad2)"/><circle cx="155" cy="195" r="7" fill="%233E2723"/><circle cx="140" cy="205" r="6" fill="%233E2723"/><circle cx="160" cy="210" r="8" fill="%233E2723"/></g><g><circle cx="400" cy="350" r="68" fill="url(%23grad2)"/><circle cx="405" cy="345" r="9" fill="%233E2723"/><circle cx="390" cy="355" r="7" fill="%233E2723"/><circle cx="410" cy="360" r="7" fill="%233E2723"/><circle cx="395" cy="340" r="6" fill="%233E2723"/></g><g><circle cx="650" cy="150" r="72" fill="url(%23grad2)"/><circle cx="655" cy="145" r="9" fill="%233E2723"/><circle cx="640" cy="155" r="8" fill="%233E2723"/><circle cx="660" cy="160" r="7" fill="%233E2723"/><circle cx="645" cy="140" r="7" fill="%233E2723"/></g><g><circle cx="900" cy="300" r="65" fill="url(%23grad2)"/><circle cx="905" cy="295" r="8" fill="%233E2723"/><circle cx="890" cy="305" r="7" fill="%233E2723"/><circle cx="910" cy="310" r="8" fill="%233E2723"/></g><g><circle cx="1050" cy="180" r="58" fill="url(%23grad2)"/><circle cx="1055" cy="175" r="7" fill="%233E2723"/><circle cx="1040" cy="185" r="6" fill="%233E2723"/></g></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.slide3 {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><defs><radialGradient id="grad3" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:%23E8B76B;stop-opacity:1" /><stop offset="100%" style="stop-color:%23CD853F;stop-opacity:1" /></radialGradient></defs><rect fill="%236B4423" width="1200" height="500"/><g><circle cx="250" cy="250" r="70" fill="url(%23grad3)"/><circle cx="255" cy="245" r="9" fill="%233E2723"/><circle cx="240" cy="255" r="7" fill="%233E2723"/><circle cx="260" cy="260" r="8" fill="%233E2723"/><circle cx="245" cy="240" r="7" fill="%233E2723"/></g><g><circle cx="500" cy="180" r="62" fill="url(%23grad3)"/><circle cx="505" cy="175" r="8" fill="%233E2723"/><circle cx="490" cy="185" r="7" fill="%233E2723"/><circle cx="510" cy="190" r="7" fill="%233E2723"/></g><g><circle cx="750" cy="320" r="68" fill="url(%23grad3)"/><circle cx="755" cy="315" r="9" fill="%233E2723"/><circle cx="740" cy="325" r="7" fill="%233E2723"/><circle cx="760" cy="330" r="8" fill="%233E2723"/><circle cx="745" cy="310" r="6" fill="%233E2723"/></g><g><circle cx="950" cy="200" r="65" fill="url(%23grad3)"/><circle cx="955" cy="195" r="8" fill="%233E2723"/><circle cx="940" cy="205" r="7" fill="%233E2723"/><circle cx="960" cy="210" r="7" fill="%233E2723"/></g></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.slide-content {
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.slide-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.slide-content p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 60px 5%;
+    background: #6B4423;
+    color: white;
+}
+
+.menu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.menu-header h1 {
+    font-size: 4rem;
+    color: #F4E4C1;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.menu-header h2 {
+    font-size: 2rem;
+    color: #F4E4C1;
+    font-weight: normal;
+}
+
+.menu-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.category-section {
+    margin-bottom: 60px;
+}
+
+.category-title {
+    background: #E8765D;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.subcategory-title {
+    color: #F4E4C1;
+    font-size: 1.2rem;
+    margin: 30px 0 20px 0;
+    font-weight: bold;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+a{
+    text-decoration: none;
+}
+.menu-item {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.menu-item-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    background: #f0f0f0;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 250px;
+    background: rgba(139, 69, 19, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B4423;
+    font-size: 0.9rem;
+    border: 2px dashed #6B4423;
+}
+
+.menu-item-content {
+    padding: 25px;
+}
+
+.menu-item h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-price {
+    font-size: 1.4rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.order-btn {
+    background: #E8765D;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.order-btn:hover {
+    background: #d5634b;
+}
+
+.special-note {
+    background: #E8765D;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 40px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.special-note h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+/* About Section */
+.about-section {
+    padding: 80px 5%;
+    background: white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #6B4423;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 80px 5%;
+    background: #F4E4C1;
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-info h3 {
+    color: #6B4423;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    margin: 15px 0;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+footer {
+    background: #6B4423;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 1024px) {
+    .menu-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        gap: 15px;
+    }
+
+    .slide-content h1 {
+        font-size: 2rem;
+    }
+
+    .slide-content p {
+        font-size: 1rem;
+    }
+
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .menu-header h2 {
+        font-size: 1.3rem;
+    }
+}
