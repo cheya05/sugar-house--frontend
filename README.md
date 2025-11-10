@@ -1,2 +1,2 @@
 # sugar-house--frontend
-A website for a cookie busimess
+A website for a cookie busimnss
